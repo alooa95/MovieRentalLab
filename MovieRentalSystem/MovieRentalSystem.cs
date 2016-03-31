@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,7 +107,7 @@ namespace MovieRentalSystem
                 movieInfo += "\n";
 
                 // add new movie to text file using streamswriter with the path to the text file
-                using (StreamWriter writer = new StreamWriter(path, true))
+                using (StreamWriter writer = new StreamWriter("MovieList.txt", true))
                     writer.WriteLine(movieInfo);
             }
         }
@@ -174,11 +174,20 @@ namespace MovieRentalSystem
                customerInfo += "\n";
 
                // add new movie to text file using streamswriter with the path to the text file
-               using (StreamWriter writer = new StreamWriter(path, true))
+               using (StreamWriter writer = new StreamWriter("CustomerList.txt", true))
                    writer.WriteLine(customerInfo);
            }
        }
-       
+
+        public List<Customer> CustomerArray
+        {
+            get { return customerArray;}
+        }
+
+        public List<Movie> MoviesArray
+        {
+            get { return moviesArray; }
+        }
 
 
 
